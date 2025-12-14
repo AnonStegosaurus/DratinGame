@@ -56,7 +56,6 @@ injectCriticalHitFeedback(username) {
         this.chatBox.scrollTop = this.chatBox.scrollHeight;
         this.queuedMessages = [];
         
-        // Limpa mensagens antigas
         const msgs = this.chatBox.querySelectorAll('.chatMessage');
         if (msgs.length > 100) {
             for (let i = 0; i < msgs.length - 100; i++) msgs[i].remove();
@@ -95,7 +94,7 @@ injectCriticalHitFeedback(username) {
             <div class="timer-container"><div class="timer-bar" style="animation-duration: 5s;"></div></div>
         `;
         
-        // Adiciona o evento no topo
+
         this.chatBox.prepend(msgDiv); 
         this.chatBox.scrollTop = 0;
 
@@ -108,13 +107,13 @@ injectCriticalHitFeedback(username) {
                 this.game.gainHype(100); 
                 this.game.audio.playSound("good");
                 this.addSystemMessage("🎉 Right!");
-                // Feedback visual mantido para eventos de chat
+ 
                 this.game.applyFeedbackGlow("rgba(0, 255, 0, 0.8)"); 
             } else {
                 this.game.loseHype(10);
                 this.game.audio.playSound("bad");
                 this.addSystemMessage("❌ Wrong!");
-                // Feedback visual mantido para eventos de chat
+
                 this.game.applyFeedbackGlow("rgba(255, 0, 0, 0.8)"); 
             }
         };
@@ -133,7 +132,7 @@ injectCriticalHitFeedback(username) {
         let cleared = 0;
         let xpGained = 0;
         
-        // Percorre as mensagens do jogo (assumindo que this.game.messages.messages existe)
+
         for (let i = this.game.messages.messages.length - 1; i >= 0 && cleared < level; i--) {
             const msg = this.game.messages.messages[i];
             if (msg && !msg.good) {
