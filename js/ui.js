@@ -27,7 +27,6 @@ export class UIManager {
         this.levelValue = document.getElementById("levelValue");
         this.staminaBar = document.getElementById("staminaBar");
         this.staminaValue = document.getElementById("staminaValue");
-        // ❌ REMOVIDO: this.fpsDebug = document.getElementById("fpsDebug");
         this.showAchievementsBtn = document.getElementById('showAchievementsBtn'); 
         this.achievementListDetail = document.getElementById('achievementListDetail'); 
         this.finalTimeElement = document.getElementById("finalTime"); 
@@ -127,9 +126,7 @@ export class UIManager {
             this.startBtn.textContent = running ? "Stream Running" : "Start Stream";
         }
     }
-    // ❌ REMOVIDO: updateFPS(fps) {
-    // ❌ REMOVIDO:    if (this.fpsDebug) this.fpsDebug.textContent = `FPS: ${fps}`;
-    // ❌ REMOVIDO: }
+
     renderUpgradeScreen(playerLevel, upgrades, currentLevels, onSelect, getCostFn) { 
         const availableUpgrades = upgrades.filter(upg => {
             const currentLevel = currentLevels[upg.id] || 0;
@@ -153,7 +150,7 @@ export class UIManager {
                     <div style="font-weight: 600; margin-bottom: 4px;">${upg.name}</div>
                     <div style="font-size: 14px; color: #adadb8;">Nv. ${currentLevel} -> Nv. ${nextLevel}</div>
                     <div style="font-size: 12px; color: #adadb8;">${upg.description}</div>
-                    <div class="upgrade-cost">Cost: ${cost} Níveis</div>
+                    <div class="upgrade-cost">Cost: ${cost} Levels</div>
                 </div>`;
         }).join('');
         const skipButton = '<button id="skipUpgradeBtn" style="margin-top: 15px; padding: 10px 20px; cursor: pointer; background-color: #333; color: white; border: 1px solid #555;">Skip</button>';
