@@ -53,7 +53,6 @@ export class AudioManager {
     playSound(type) {
         if (!this.sfx[type]) return;
         
-        // Usa cloneNode(true) para permitir que múltiplos sons sejam tocados ao mesmo tempo (como acertos rápidos)
         const sound = this.sfx[type].cloneNode(true);
         sound.volume = this.sfxVolume;
         sound.play().catch(() => {});
@@ -81,7 +80,7 @@ export class AudioManager {
     }
     
     switchMusic(mode) {
-        // Lógica de switch de música para modo "shield"
+
         if (mode === "shield" && this.currentMusic !== this.shieldMusic) {
             this.fadeMusic(0, 0.5);
             setTimeout(() => {
@@ -93,7 +92,7 @@ export class AudioManager {
                 this.fadeMusic(this.musicVolume, 1);
             }, 500);
         
-        // Lógica de switch de música para modo "normal"
+
         } else if (mode === "normal" && this.currentMusic !== this.backgroundMusic) {
             this.fadeMusic(0, 0.5);
             setTimeout(() => {
