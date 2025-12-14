@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dratin's Stream Frenzy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="gameContainer">
+    <div id="gameArea">
+      <canvas id="gameCanvas"></canvas>
+      <div id="ui">
+        <section class="stat-box hype-box">
+          <div class="stat-header">
+            <h3>Hype:</h3>
+            <span id="hypeValue" class="stat-value">100%</span>
+          </div>
+          <div class="bar-container">
+            <div id="hypeBar" class="bar"></div>
+          </div>
+        </section>
+<section class="stat-box stamina-box hidden">
+          <div class="stat-header">
+            <h3>Stamina:</h3>
+            <span id="staminaValue" class="stat-value">100%</span>
+          </div>
+          <div class="bar-container">
+            <div id="staminaBar" class="bar"></div>
+          </div>
+        </section>
+        <section class="stat-box xp-box">
+          <div class="stat-header">
+            <h3>Views:</h3>
+            <span id="xpValue" class="stat-value">0</span>
+          </div>
+          <div class="bar-container">
+            <div id="xpBar" class="bar"></div>
+          </div>
+        </section>
+      <div id="levelIndicator">
+        <div class="level-badge">
+          <span>LVL</span>
+          <span id="levelValue" class="level">1</span>
+        </div>
+      </div>
+      </div>
+      <div id="pausedOverlay" class="overlay">
+        <h2>PAUSED</h2>
+        <p>Press SPACE to continue.</p>
+      </div>
+<div id="game-over" class="overlay hidden">
+    <div class="game-over-content">
+        <h1>STREAM OFFLINE</h1>
+        
+        <p>Time: <span id="finalTime">0:00</span></p>
+        <p>Max Level: <span id="finalLevel">1</span></p>
+        
+        <p>Achievements: <span id="achievementStatsCount">0/15</span></p>
+
+        <button id="showAchievementsBtn">Show Achievements</button>
+
+        <div id="achievementStats"> 
+            <h2>🏆 All Achievements</h2>
+            <ul class="achievement-list" id="achievementListDetail">
+                </ul>
+        </div>
+        
+        <button id="restartBtn">Restart Stream</button>
+    </div>
+</div>
+      <div id="upgradeScreen" class="overlay hidden">
+        <h2>Upgrade Available!</h2>
+        <p>Choose one upgrade to make your stream better!</p>
+        <div class="upgrade-options">
+        </div>
+      </div>
+    </div>
+    <div id="sidebar">
+      <header class="sidebar-header">
+        <h2>Dratin's Stream Frenzy</h2>
+      </header>
+<div id="chatBox">
+        <div class="chatMessage system">
+        <strong>👋 Welcome to Dratin's Stream Frenzy!</strong>
+        <p>Press 'Start Stream' to begin!</p>
+    </div>
+<div class="chatMessage system">
+    <h3>🕹️ Controls</h3>
+    <table class="control-table">
+        <tr>
+            <td>🚶 Move</td>
+            <td>WASD</td>
+        </tr>
+        <tr>
+            <td>💨 Run</td>
+            <td>SHIFT</td>
+        </tr>
+        <tr>
+            <td>❌ Ban</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>⭐ VIP</td>
+            <td>2</td>
+        </tr>
+    </table>
+</div>
+</div>
+      
+      <section class="controls">
+        <button id="startBtn" class="big-btn">Start Stream</button>
+      </section>
+    </div>
+  </div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
